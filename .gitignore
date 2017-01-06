@@ -1,0 +1,9 @@
+# Ignore configuration files that may contain sensitive information.
+files/lipzi.live/settings.php
+
+# Ignore paths that contain generated content.
+files/lipzi.live/files/
+files/lipzi.live/private
+
+# Ignore database
+database/lipzi.sql

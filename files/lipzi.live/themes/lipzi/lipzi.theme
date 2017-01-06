@@ -1,0 +1,49 @@
+<?php
+
+function lipzi_preprocess_page(&$variables) {
+  $fallback_image_uri = 'public://default_images/lipzi.jpg';
+  $fieldName = 'field_header_background';
+
+  $variables['header_background_url'] = isset($variables['node']) && method_exists($variables['node'], 'hasField') ?
+    get_header_background_url($variables['node'], $fieldName) : file_create_url($fallback_image_uri);
+}
+
+function get_header_background_url($entity, $fieldName) {
+  $image_uri = NULL;
+  
+  // 1. Try loading from field values first.
+  if($entity->hasField($fieldName)) {
+    try {
+      $field = $entity->{$fieldName}; 
+      if ($field && $field->target_id) {
+        $file = \Drupal\file\Entity\File::load($field->target_id);
+        if ($file) {
+          $image_uri = $file->getFileUri();
+        }
+      }
+    } catch (\Exception $e) {
+      \Drupal::logger('get_header_background_url')->notice($e->getMessage(), []);
+    }
+
+    // 2. If a set value above wasn't found, try the default image.
+    if (is_null($image_uri)) {
+      try {
+        $field = $entity->get($fieldName); // Loading from field definition
+        if ($field) {
+          $default_image = $field->getSetting('default_image');
+          if ($default_image && $default_image['uuid']) {
+            $entityrepository = Drupal::service('entity.repository');
+            $defaultImageFile = $entityrepository->loadEntityByUuid('file', $default_image['uuid']);
+            if($defaultImageFile) {
+              $image_uri = $defaultImageFile->getFileUri();
+            }
+          }
+        }
+      } catch (\Exception $e) {
+        \Drupal::logger('get_header_background_url')->notice($e->getMessage(), []);
+      }
+    }
+  }
+ 
+  return file_create_url($image_uri);
+}
