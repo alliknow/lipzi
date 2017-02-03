@@ -1,0 +1,43 @@
+drush pm-download drupal-8
+mv drupal-8.2.3 drupal8
+cd drupal8/sites
+cp example.sites.php sites.php
+
+Edit sites.php (see git)
+Create sites/lipzi.live and cp default/default.settings.php lipzi.live
+Edit .htaccess to force https://
+Set PHP version to > 7 for folder drupal8
+Install Drupal (use random table prefix)
+
+Edit settings.php -> trusted host settings
+Set tmp folder to sites/lipzi.live/files/tmp in admin/config/media/file-system
+
+Enable 4 multilang modules
+Enable German and Italian
+Enable Detection (INCLUDE path and set path prefix for default language!)
+Enable translation for basic pages
+
+Delete content type 'Article'
+Uninstall Comment and Search module
+
+Use Bootstrap starterkit for lipzi theme in sites/lipzi.live/themes (http://drupal-bootstrap.org/api/bootstrap/docs%21Sub-Theming.md/group/sub_theming/8)
+Change navbar type to static top
+Configure blocks
+
+Overwrite page template in theme to add changeable header background
+Apply CSS to change to desired look
+
+Install honeypot
+Deinstall Tour
+
+Add role "editor" and user "johannes"
+
+Drop shadow
+Font
+Menus
+
+Module usage justifications:
+Font your face: Museo Font import
+Display Suite, Layout Plugins, Bootstrap Layout: page layouts
+Ctools: Node block (used for page polaroids)
+Honeypot: Kontakt form spam prevention
