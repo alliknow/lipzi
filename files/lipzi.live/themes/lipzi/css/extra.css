@@ -1,0 +1,24 @@
+/* Hide contact form preview button */
+#edit-preview {
+    display: none;
+}
+
+
+/* Tour description and content field layout details */
+.lipzi-bike-buttons,
+.lipzi-city-buttons {
+    margin: 10px 0px;
+}
+.lipzi-reservation,
+.lipzi-tour-list {
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.bs-region--right > .field {
+    margin-top: 10px;
+}
+.bs-region--right > .field > .field--label {
+    font-weight: 700;
+}
+

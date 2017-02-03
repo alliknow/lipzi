@@ -1,0 +1,26 @@
+/* Footer menu layout */
+#block-lipzi-footer > .menu {
+    text-align: center;
+    background: rgb(55, 55, 55);
+}
+#block-lipzi-footer > .menu > li > a {
+    display: inline;
+}
+#block-lipzi-footer > .menu > li {
+    display: inline;
+}
+
+#block-lipzi-footer > .menu > li > a:hover,
+#block-lipzi-footer > .menu > li > a:focus,
+#block-lipzi-footer > .menu > li > a:hover,
+#block-lipzi-footer > .menu > li > a:focus,
+#block-lipzi-footer > .menu > .open > a,
+#block-lipzi-footer > .menu > .open > a:hover,
+#block-lipzi-footer > .menu > .open > a:focus,
+#block-lipzi-footer > .menu > .active > a,
+#block-lipzi-footer > .menu > .active > a:hover,
+#block-lipzi-footer > .menu > .active > a:focus {
+    color: white;
+    text-decoration: underline;
+    background-color: rgb(55, 55, 55);
+}

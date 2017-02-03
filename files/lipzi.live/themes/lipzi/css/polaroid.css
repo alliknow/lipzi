@@ -1,0 +1,34 @@
+/* Tour pics in polaroid style */
+@media (max-width: 767px) {
+  div.polaroids {
+    /* Add more margin on phones */
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+}
+@media (min-width: 768px) {
+  div.polaroids {
+    /* Make sure the images are not too close to the page margin */
+    margin-left: 10px;
+  }
+}
+
+div.polaroid > img {
+  width: 100%;
+  padding: 10px 10px 25px;
+  margin-bottom: 30px;
+  background: white;
+  box-shadow: 0pt 3px 6px rgba(0, 0, 0, 0.25);
+  transition: transform .15s linear;
+  transform: rotate(-2deg);
+}
+div.polaroid-even > img {
+  transform: rotate(2deg);
+}
+
+div.polaroid > img:hover {
+  transform: scale(1.3);
+  position: relative;
+  z-index: 50;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .5);
+}

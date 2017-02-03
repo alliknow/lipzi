@@ -1,4 +1,10 @@
 global-styling:
   css:
     theme:
-      css/style.css: {}
+      css/main.css: {}
+      css/navbar.css: {}
+      css/polaroid.css: {}
+      css/footer.css: {}
+      css/extra.css: {}
+  js:
+    js/affix.js: {}

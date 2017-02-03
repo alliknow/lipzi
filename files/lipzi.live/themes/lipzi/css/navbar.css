@@ -1,0 +1,96 @@
+/* 
+ All layout needed for header, logo, and menu bar.
+ Note that the page uses two menus, one shown when on phones
+ and the other when on wider screens.
+*/
+.navbar-static-top {
+    background-color: transparent;
+    border: 0px;
+    margin-bottom: 0px;
+}
+
+.navbar-header {
+    min-height: 350px;
+    width: 100%;
+    box-shadow: 4px 0px 4px rgb(136, 136, 136);
+}
+.lipzi-header-background-container {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.logo {
+    margin: 0px 30px 100px;
+    float: right !important;
+}
+
+/* Color and link behaviour settings */
+.menu {
+    background: #A2C8EC;
+}
+.navbar-default .navbar-nav > li > a,
+.menu > li > a {
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus,
+.menu > li > a:hover,
+.menu > li > a:focus,
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background-color: #BED001;
+}
+
+/* Size specific layouts, including show/hide for the 2 menus */
+@media (max-width: 767px) {
+    #block-lipzi-main-menu {
+        display: none;
+    }
+    .container > .navbar-header {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .navbar-toggle {
+        clear: both;
+        background: lightgray;
+    }
+    .navbar-collapse {
+        border: 0px;
+    }
+}
+@media (min-width: 768px) {
+    #block-mainnavigationmobile > ul {
+        display: none;
+    }
+}
+@media (max-width: 991px) {
+    #block-lipzi-main-menu > ul {
+        width: 750px;
+    }
+    #navbar > .container {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    #block-lipzi-main-menu > ul {
+        width: 970px;
+    }
+    #navbar > .container {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
+@media (min-width: 1200px) {
+    #block-lipzi-main-menu > ul {
+        width: 1140px;
+    }
+}

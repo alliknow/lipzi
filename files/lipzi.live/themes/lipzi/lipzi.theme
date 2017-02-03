@@ -1,7 +1,7 @@
 <?php
 
 function lipzi_preprocess_page(&$variables) {
-  $fallback_image_uri = 'public://default_images/lipzi.jpg';
+  $fallback_image_uri = 'public://header_backgrounds/default.jpg';
   $fieldName = 'field_header_background';
 
   $variables['header_background_url'] = isset($variables['node']) && method_exists($variables['node'], 'hasField') ?
