@@ -1,6 +1,12 @@
 <?php
 
 function lipzi_preprocess_page(&$variables) {
+  // Add Bookingkit JavaScript if needed
+  if (isset($variables['node']) && $variables['node']->id() == 41) {
+    $variables['#attached']['library'][] = 'lipzi/bookingkit-ddf0457d9d327134f70fb4a81bb4a1bb';
+  }
+
+  // Inject header background image
   $fallback_image_uri = 'public://header_backgrounds/default.jpg';
   $fieldName = 'field_header_background';
 

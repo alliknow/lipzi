@@ -8,3 +8,6 @@ global-styling:
       css/extra.css: {}
   js:
     js/affix.js: {}
+bookingkit-ddf0457d9d327134f70fb4a81bb4a1bb:
+  js:
+    https://eu5.bookingkit.de/bkscript.js.php?e=ddf0457d9d327134f70fb4a81bb4a1bb: { type: external }
