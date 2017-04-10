@@ -5,6 +5,7 @@ global-styling:
       css/navbar.css: {}
       css/polaroid.css: {}
       css/footer.css: {}
+      css/bookingkit.css: {}
       css/extra.css: {}
   js:
     js/affix.js: {}

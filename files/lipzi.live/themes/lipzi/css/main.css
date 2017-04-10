@@ -2,6 +2,23 @@ body {
     background: url('../images/texturetastic_gray.png');
 }
 
+@media (max-width: 767px) {
+    h1 {
+        font-size: 28px;
+    }
+    h2 {
+        font-size: 24px;
+    }
+}
+a:link, a:visited {
+    text-decoration: none;
+    color: #A12109;
+}
+a:hover, a:active, a:focus {
+    text-decoration: underline;
+    color: #BED001;
+}
+
 .main-container {
     background: white;
     padding-top: 15px;
@@ -12,9 +29,18 @@ body {
 
 .footer {
     margin-top: 0px;
-    margin-bottom: 25px;
     max-width: 1140px;
     color: white;
     background: rgb(55, 55, 55);
     box-shadow: 4px 4px 4px rgb(136, 136, 136);
+}
+@media (max-width: 767px) {
+    .footer {
+        margin-bottom: 0px;
+    }
+}
+@media (min-width: 768px) {
+    .footer {
+        margin-bottom: 25px;
+    }
 }

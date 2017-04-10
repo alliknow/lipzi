@@ -5,6 +5,7 @@
 }
 #block-lipzi-footer > .menu > li > a {
     display: inline;
+    line-height: 30px;
 }
 #block-lipzi-footer > .menu > li {
     display: inline;

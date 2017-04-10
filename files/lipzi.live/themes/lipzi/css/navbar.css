@@ -9,20 +9,49 @@
     margin-bottom: 0px;
 }
 
-.navbar-header {
-    min-height: 350px;
-    width: 100%;
-    box-shadow: 4px 0px 4px rgb(136, 136, 136);
-}
 .lipzi-header-background-container {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
-.logo {
-    margin: 0px 30px 100px;
-    float: right !important;
+#block-sprachumschalter {
+    position: relative;
+    width: 0px;
+    height: 0px;
+}
+#lipzi-language-switcher {
+    margin: 10px;
+}
+#lipzi-language-switcher-dropdown {
+    top: 45px;
+    left: 10px;
+}
+
+/* Use 250px header on small devices, 350px on larger ones*/
+@media (max-width: 767px) {
+    .navbar-header {
+        min-height: 250px;
+        width: 100%;
+    }
+    .logo {
+        margin: 0px 15px 70px;
+        float: right !important;
+    }
+    .logo > img {
+        width: 180px;
+    }
+}
+@media (min-width: 768px) {
+    .navbar-header {
+        min-height: 350px;
+        width: 100%;
+        box-shadow: 4px 0px 4px rgb(136, 136, 136);
+    }
+    .logo {
+        margin: 0px 30px 100px;
+        float: right !important;
+    }
 }
 
 /* Color and link behaviour settings */

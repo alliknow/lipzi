@@ -52,7 +52,7 @@
   <div{{ attributes.addClass(classes, 'field--item') }}>
     <a class="btn btn-info lipzi-reservation" href="{{ item.content['#url'] }}">{{ item.content['#title'] }}</a>
 
-    <a class="btn btn-info lipzi-tour-list" href="/bike-tours">
+    <a class="btn btn-info lipzi-tour-list" href="{{ path('entity.node.canonical', {'node': 49}) }}">
       {% trans %}
         All bike tours
       {% endtrans %}

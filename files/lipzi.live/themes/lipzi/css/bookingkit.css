@@ -1,0 +1,25 @@
+.bk-detail-content > .bk-detail-mini-description,
+.bk-detail-content > .bk-detail-description,
+.bk-detail-content > .bk-image-slider,
+.bk-detail-content > .bk-detail-images,
+.bk-detail-content > .bk-detail-informations,
+.bk-detail-content > .bk-checkout-footer,
+.bk-detail-content > .bk-detail-highlights > .bk-detail-price,
+.bk-detail-content > .bk-detail-highlights > .bk-detail-highlight-line,
+.bk-detail-content > .bk-detail-highlights > ul
+{
+    display: none !important;
+}
+
+.bk-detail-content > .bk-detail-highlights {
+    width: 100% !important;
+    margin-bottom: 10px;
+}
+
+.bk-detail-content > .bk-detail-highlights > .bk-voucher-btn {
+    margin: 2px 0px 0px 0px !important;
+}
+
+#bk-detail-bookingdates {
+    width: unset !important;
+}

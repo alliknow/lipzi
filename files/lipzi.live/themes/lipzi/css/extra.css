@@ -3,16 +3,29 @@
     display: none;
 }
 
+/* Customize Bootstrap's button definitions */ 
+.btn-info, .btn-primary {
+   color: white !important;
+   background: #A2C8EC;
+   border-color: #A2C8EC;
+}
+.btn-primary:focus, .btn-primary:hover,
+.btn-info:focus, .btn-info:hover {
+  color: white !important;
+  background-color: #286090;
+  border-color: #122b40;
+}
 
 /* Tour description and content field layout details */
 .lipzi-bike-buttons,
 .lipzi-city-buttons {
-    margin: 10px 0px;
+    margin: 15px 0px;
 }
 .lipzi-reservation,
 .lipzi-tour-list {
     font-size: 16px;
     font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .bs-region--right > .field {
