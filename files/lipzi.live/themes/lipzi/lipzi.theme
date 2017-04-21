@@ -1,15 +1,18 @@
 <?php
 
 function lipzi_preprocess_page(&$variables) {
-  // Add Bookingkit JavaScript if needed
+  // Add Bookingkit JavaScript if needed. Right now this is only used on
+  // one specific page for the public bike tour
   if (isset($variables['node']) && $variables['node']->id() == 41) {
     $variables['#attached']['library'][] = 'lipzi/bookingkit-ddf0457d9d327134f70fb4a81bb4a1bb';
   }
 
-  // Inject header background image
-  $fallback_image_uri = 'public://header_backgrounds/default.jpg';
+  // Inject header background image url to be used in twig template.
+  // There is both a global and a content type fallback. Those are used, when
+  // the node has no value for the field name given below.
   $fieldName = 'field_header_background';
-
+  $fallback_image_uri = 'public://header_backgrounds/default.jpg';
+  
   $variables['header_background_url'] = isset($variables['node']) && method_exists($variables['node'], 'hasField') ?
     get_header_background_url($variables['node'], $fieldName) : file_create_url($fallback_image_uri);
 }
@@ -28,7 +31,7 @@ function get_header_background_url($entity, $fieldName) {
         }
       }
     } catch (\Exception $e) {
-      \Drupal::logger('get_header_background_url')->notice($e->getMessage(), []);
+      \Drupal::logger('Header Background')->warning($e->getMessage(), []);
     }
 
     // 2. If a set value above wasn't found, try the default image.
@@ -46,7 +49,7 @@ function get_header_background_url($entity, $fieldName) {
           }
         }
       } catch (\Exception $e) {
-        \Drupal::logger('get_header_background_url')->notice($e->getMessage(), []);
+        \Drupal::logger('Header Background')->warning($e->getMessage(), []);
       }
     }
   }
@@ -54,6 +57,8 @@ function get_header_background_url($entity, $fieldName) {
   return file_create_url($image_uri);
 }
 
+// Turns the default Drupal language block into a Bootstrap drop-down.
+// Also see twig template block/links--language-block
 function lipzi_preprocess_links__language_block(&$variables) {
   $currentLanguageCode = \Drupal::languageManager()->getCurrentLanguage()->getId();
   
