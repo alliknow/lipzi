@@ -27,7 +27,7 @@ a:hover, a:active, a:focus {
     box-shadow: 4px 4px 4px rgb(136, 136, 136);
 }
 
-.footer {
+footer.footer {
     margin-top: 0px;
     max-width: 1140px;
     color: white;
